@@ -1,0 +1,6 @@
+My method for finding the primes uses a modified version of the Sieve of Eratosthenes to find all primes up to the target. The method I used is know as the segmented sieve
+which has less memory cost ( O(sqrt(n) ) than the simple sieve ( O(n) ), but they have the same time complexity. Each thread is responsible for finding primes in a range
+of 10^8 / 8 which is 12500000 numbers per thread. Additionally, another small optimization I made was to ignore all even numbers except for 2 as they aren't prime.
+
+My first implementation using the naive modulo approach reached around 12 seconds of runtime. Using the sieve approach got the runtime to ~1.7 seconds, then removing
+even numbers brought it down to ~0.85 seconds.
