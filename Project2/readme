@@ -1,0 +1,13 @@
+To run, in the root directory of the folder, run "g++ Labyrinth.cpp -o labyrinth" and "g++ vase.cpp -o vase" to compile the files into executables. Then call
+"labyrinth" and "vase" to run. Amount of threads is set in NUM_THREADS variable.
+
+Problem 1:
+To solve this problem we use an approach similar to the prisoners dilemna. The first thread is the counter, and he is responsible for keeping track of how many
+cupcakes he has eaten. Whenever someone has entered the labyrinth who sees the plate is empty and hasn't already requested a cupcake, they will request a new one.
+The next time the counter enters, he will eat it a increment his count by one. Once he has eaten N cupcakes, the he knows everyone has entered the labyrinth. Since
+this relies on random number generation, the runtime can range from O(N) to O(N^N) if you're super unlucky.
+
+Problem 2:
+I chose the second solution to implement this since it seemed the simplest. Threads can access the room whenever they see its avaliable and then set a variable 
+marking them as having been in the room. Additionally, it's easy to check wether or not the room is avaliable as it is marked by a flag. Threads enter in a random order
+as the room becomes avaliable.
