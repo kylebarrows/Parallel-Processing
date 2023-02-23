@@ -87,8 +87,5 @@ int main()
 
 	std::cout << "Done in " << runTime.count() << "ms" << std::endl;
 
-	char temp;
-	std::cin >> temp;
-
 	return 0;
 }
