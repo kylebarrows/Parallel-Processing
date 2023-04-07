@@ -6,7 +6,6 @@
 #include <chrono>
 
 using namespace std;
-const int NUM_THREADS = 50;
 atomic<int> minutes(0);
 atomic<bool> finished(false);
 vector<vector<int>> reads(60, vector<int>(8));
@@ -69,7 +68,7 @@ void CollectReadings(vector<vector<int>> readings)
 
 int main()
 {
-	int hoursToRun = 100;
+	int hoursToRun = 50;
 	std::thread threads[8];
 
 	auto startTime = std::chrono::high_resolution_clock::now();
