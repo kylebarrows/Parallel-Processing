@@ -1,0 +1,9 @@
+To run, in the root directory of the folder, run "g++ Presents.cpp -o Presents" and "g++ temperatures.cpp -o temperatures" to compile the files into executables. Then call "Presents" and "temperatures" to run.
+
+Problem 1:
+The reason there may have been more presents than thank you notes is if two threads are trying to remove adjacent elements from the list at the same time. The first thread attempt to remove node A which has predecessor B. If B is removed simoultaneously then B's predecessor next will be set to A, however A has been removed from the list. Therefore there is an additional present.
+
+My approach uses the optimisic synchronization implementation of a concurrent list from chapter 9.6 of the textbook. Since the actions of the servants are randomized, it's difficult to get an accurate runtime, but list insertion, deletion, and search are all O(n) operations.
+
+Problem 2:
+My approach involves using an 60 by 8 array to keep track of each sensor's reading by the minute. I randomly generate the sensor's reading then store it in the array at the corresponding minute and index. Once an hour has passed the sensor data is processed and displayed to the screen. It takes about 2 seconds for each hour to complete. Runs for 100 hours.
